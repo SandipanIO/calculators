@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+   <!-- Google Fonts -->
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+
+   <!-- Main Stylesheet -->
+   <link rel="stylesheet" href="css/style.css">
+
+   <title>TDEE Calculator</title>
+</head>
+<body>
+   <main>
+      <div class="tdee-calculator">
+         <h1 class="heading-1">TDEE Calculator</h1>
+
+         <div id="tdee-result" class="tdee__result" data-tdee-result-visible="false"></div>
+
+         <form id="tdee-form" action="#" method="post">
+            <p class="tdee__text">Gender</p>
+            <div class="tdee__gender-wrapper">
+               <label class="tdee__gender-label" for="tdee-gender-male">
+                  <input class="tdee__gender-input" type="radio" name="tdee-gender" id="tdee-gender-male" value="male" checked>
+                  <span class="tdee__gender-item">Male</span>
+               </label>
+               <label class="tdee__gender-label" for="tdee-gender-female">
+                  <input class="tdee__gender-input" type="radio" name="tdee-gender" id="tdee-gender-female" value="female">
+                  <span class="tdee__gender-item">Female</span>
+               </label>
+            </div>
+
+            <div class="tdee__input-wrapper">
+               <label for="tdee-age">
+                  <span>Age</span>
+                  <input class="tdee__input-field" type="number" name="tdee-age" id="tdee-age" min="1" max="125" required>
+               </label>
+
+               <label for="tdee-weight">
+                  <span>Weight</span>
+                  <input class="tdee__input-field" type="number" name="tdee-weight" id="tdee-weight" min="1" max="1000" required>
+               </label>
+
+               <label for="tdee-height">
+                  <span>Height</span>
+                  <input class="tdee__input-field" type="number" name="tdee-height" id="tdee-height" min="1" max="1000" required>
+               </label>
+            </div>
+
+            <p class="tdee__text">How Active Are You?</p>
+            <div class="tdee__activity-wrapper">
+               <label class="tdee__activity-label" for="tdee-activity-sedentary">
+                  <input class="tdee__activity-input" type="radio" name="tdee-activity" id="tdee-activity-sedentary" value="1.2" checked>
+                  <span class="tdee__activity-item">Sedentary (little or no exercise)</span>
+               </label>
+               <label class="tdee__activity-label" for="tdee-activity-light">
+                  <input class="tdee__activity-input" type="radio" name="tdee-activity" id="tdee-activity-light" value="1.375">
+                  <span class="tdee__activity-item">Lightly active (exercise 1 to 3 days a week)</span>
+               </label>
+               <label class="tdee__activity-label" for="tdee-activity-moderate">
+                  <input class="tdee__activity-input" type="radio" name="tdee-activity" id="tdee-activity-moderate" value="1.55">
+                  <span class="tdee__activity-item">Moderately active (exercise 3 to 5 days a week)</span>
+               </label>
+               <label class="tdee__activity-label" for="tdee-activity-heavy">
+                  <input class="tdee__activity-input" type="radio" name="tdee-activity" id="tdee-activity-heavy" value="1.725">
+                  <span class="tdee__activity-item">Heavy (exercise 6 to 7 days a week)</span>
+               </label>
+               <label class="tdee__activity-label" for="tdee-activity-athlete">
+                  <input class="tdee__activity-input" type="radio" name="tdee-activity" id="tdee-activity-athlete" value="1.9">
+                  <span class="tdee__activity-item">Athlete (2 times workout a day)</span>
+               </label>
+            </div>
+
+            <input class="tdee__calculate" type="submit" id="tdee-calculate" value="Calculate">
+         </form>
+      </div>
+   </main>
+
+   <script src="js/script.js"></script>
+</body>
+</html>
