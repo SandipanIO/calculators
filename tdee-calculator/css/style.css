@@ -42,8 +42,16 @@ main {
 }
 
 .tdee-calculator {
-   width: min(calc(650rem / 16), (100% - 2em));
-   padding-block: 4em;
+   width: min(calc(650rem / 16), (100% - 3em));
+   margin-block: 2em;
+}
+
+@media (min-width: 30em) {
+   .tdee-calculator {
+      padding: 2em;
+      border: 1px solid var(--color-secondary);
+      border-radius: 1em;
+   }
 }
 
 .heading-1 {
