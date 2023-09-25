@@ -61,6 +61,71 @@ main {
    }
 }
 
+.heading-1 {
+   font-weight: 600;
+   text-align: center;
+   margin-bottom: 1em;
+}
+
+.mcalc__wrapper {
+   margin-block: 2em;
+   columns: 1;
+}
+
+@media (min-width: 40em) {
+   .mcalc__wrapper {
+      columns: 2;
+   }
+}
+
+/* Input Fields */
+.mcalc__input-field,
+.mcalc__select-field {
+   font-size: 1rem;
+   background-color: var(--color-white);
+   height: 45px;
+   margin-block: 0.5em 1em;
+   padding: 0.75em 1em;
+   border: 1px solid var(--color-primary);
+   outline: none;
+}
+
+.mcalc__input-field:focus,
+.mcalc__select-field:focus {
+   border: 1px solid var(--color-secondary);
+}
+
+/* Calculate Button */
+
+.mcalc__calculate {
+   font-family: inherit;
+   font-size: 0.9rem;
+   font-weight: 500;
+   text-transform: uppercase;
+   color: var(--color-white);
+   width: unset;
+   padding: 1em 3em;
+   background-color: var(--color-secondary);
+   border: 1px solid var(--color-secondary);
+   border-radius: 0.2em;
+   margin-inline: auto;
+   cursor: pointer;
+   transition: all 0.3s;
+}
+
+.mcalc__calculate:hover {
+   color: var(--color-text);
+   background-color: transparent;
+}
+
+@media (min-width: 30em) {
+   .mcalc__calculate {
+      font-size: 1rem;
+      padding: 1em 5em;
+   }
+}
+
+/* Result - Chart and Data */
 .container {
    display: grid;
    gap: 2em;
@@ -106,66 +171,3 @@ main {
 .mcalc__result-box--blue { background-color: #36a2eb;}
 .mcalc__result-box--yellow { background-color: #ffcd56;}
 .mcalc__result-box--purple { background-color: #780678;}
-
-.heading-1 {
-   font-weight: 600;
-   text-align: center;
-   margin-bottom: 1em;
-}
-
-.mcalc__wrapper {
-   margin-block: 2em;
-   columns: 1;
-}
-
-@media (min-width: 40em) {
-   .mcalc__wrapper {
-      columns: 2;
-   }
-}
-
-/* Input Fields */
-.mcalc__input-field,
-.mcalc__select-field {
-   font-size: 1rem;
-   height: 45px;
-   margin-block: 0.5em 1em;
-   padding: 0.75em 1em;
-   border: 1px solid var(--color-primary);
-   outline: none;
-}
-
-.mcalc__input-field:focus,
-.mcalc__select-field:focus {
-   border: 1px solid var(--color-secondary);
-}
-
-/* Calculate Button */
-
-.mcalc__calculate {
-   font-family: inherit;
-   font-size: 0.9rem;
-   font-weight: 500;
-   text-transform: uppercase;
-   color: var(--color-white);
-   width: unset;
-   padding: 1em 3em;
-   background-color: var(--color-secondary);
-   border: 1px solid var(--color-secondary);
-   border-radius: 0.2em;
-   margin-inline: auto;
-   cursor: pointer;
-   transition: all 0.3s;
-}
-
-.mcalc__calculate:hover {
-   color: var(--color-text);
-   background-color: transparent;
-}
-
-@media (min-width: 30em) {
-   .mcalc__calculate {
-      font-size: 1rem;
-      padding: 1em 5em;
-   }
-}
