@@ -42,12 +42,18 @@
 
                <label for="tdee-weight">
                   <span>Weight</span>
-                  <input class="tdee__input-field" type="number" name="tdee-weight" id="tdee-weight" min="1" max="1000" required>
+                  <div class="tdee__input-field-wrapper">
+                     <input class="tdee__input-field" type="number" name="tdee-weight" id="tdee-weight" min="1" max="1000" required>
+                     <span class="tdee__unit">kg</span>
+                  </div>
                </label>
 
                <label for="tdee-height">
                   <span>Height</span>
-                  <input class="tdee__input-field" type="number" name="tdee-height" id="tdee-height" min="1" max="1000" required>
+                  <div class="tdee__input-field-wrapper">
+                     <input class="tdee__input-field" type="number" name="tdee-height" id="tdee-height" min="1" max="1000" required>
+                     <span class="tdee__unit">cm</span>
+                  </div>
                </label>
             </div>
 

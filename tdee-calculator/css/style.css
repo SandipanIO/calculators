@@ -28,6 +28,19 @@ body {
 input{
    display: block;
    width: 100%;
+   font: inherit;
+}
+
+/* Remove Arrows/Spinners from Number field (Chrome, Safari, Edge, Opera) */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Remove Arrows/Spinners from Number field (Firefox) */
+input[type=number] {
+  appearance: textfield;
 }
 
 p,
@@ -85,7 +98,6 @@ main {
 }
 
 /* Gender */
-
 .tdee__gender-wrapper {
    display: grid;
    gap: 1em;
@@ -130,16 +142,30 @@ main {
 }
 
 /* Input Fields */
-
 .tdee__input-wrapper {
    display: grid;
    gap: 1em;
    margin-bottom: 2.5em;
 }
 
+.tdee__input-field-wrapper {
+   position: relative;
+}
+
+.tdee__unit {
+   color: #c4c4c4;
+   position: absolute;
+   top: 50%;
+   right: 0;
+   transform: translateY(-50%);
+   padding-inline: 0.5em;
+}
+
 .tdee__input-field {
+   font-weight: 400;
+   height: 45px;
    margin-top: 0.5em;
-   padding: 1em;
+   padding: 1em 2em 1em 1em;
    border: 1px solid var(--color-primary);
    outline: none;
 }
@@ -155,7 +181,6 @@ main {
 }
 
 /* Activity */
-
 .tdee__activity-wrapper {
    display: grid;
    gap: 1em;
