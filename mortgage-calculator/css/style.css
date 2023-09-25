@@ -1,0 +1,171 @@
+:root {
+   --color-primary: #dfdada;
+   --color-secondary: darkcyan;
+
+   --color-white: #ffffff;
+   --color-text: #222;
+}
+
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+
+body {
+   font-family: 'Poppins', sans-serif;
+   font-size: 0.9rem;
+   font-weight: 400;
+   line-height: 1.5;
+   color: var(--color-text);
+}
+
+@media (min-width: 30em) {
+   body {
+      font-size: 1rem;
+   }
+}
+
+input,
+select {
+   display: block;
+   width: 100%;
+}
+
+p,
+label {
+   font-weight: 500;
+}
+
+canvas {
+   display: block;
+   max-width: 100%;
+}
+
+main {
+   min-height: 100vh;
+   display: grid;
+   place-items: center;
+}
+
+.mcalc-calculator {
+   width: min(calc(960rem / 16), (100% - 3em));
+   margin-block: 2em;
+}
+
+@media (min-width: 30em) {
+   .mcalc-calculator {
+      padding: 2em 3em;
+      border: 1px solid var(--color-secondary);
+      border-radius: 1em;
+   }
+}
+
+.container {
+   display: grid;
+   gap: 2em;
+   margin-block: 3em;
+}
+
+@media (min-width: 60em) {
+   .container {
+      grid-template-columns: repeat(2, 1fr);
+      align-items: center;
+   }
+}
+
+.mcalc__chart {
+   margin-inline: auto;
+}
+
+.mcalc__result-item {
+   display: grid;
+   align-items: center;
+   grid-template-columns: auto 1fr auto;
+   gap: 0.75em;
+   padding-block: 1em;
+}
+
+.mcalc__result-item:not(:last-child) {
+   border-bottom: 1px solid var(--color-primary);
+}
+
+.mcalc__result-item--bold {
+   font-weight: 600;
+}
+
+.mcalc__result-box {
+   display: block;
+   width: 20px;
+   height: 20px;
+   border-radius: 50%;
+}
+
+.mcalc__result-box--pink { background-color: #ff6384;}
+.mcalc__result-box--green { background-color: #0b810b;}
+.mcalc__result-box--blue { background-color: #36a2eb;}
+.mcalc__result-box--yellow { background-color: #ffcd56;}
+.mcalc__result-box--purple { background-color: #780678;}
+
+.heading-1 {
+   font-weight: 600;
+   text-align: center;
+   margin-bottom: 1em;
+}
+
+.mcalc__wrapper {
+   margin-block: 2em;
+   columns: 1;
+}
+
+@media (min-width: 40em) {
+   .mcalc__wrapper {
+      columns: 2;
+   }
+}
+
+/* Input Fields */
+.mcalc__input-field,
+.mcalc__select-field {
+   font-size: 1rem;
+   height: 45px;
+   margin-block: 0.5em 1em;
+   padding: 0.75em 1em;
+   border: 1px solid var(--color-primary);
+   outline: none;
+}
+
+.mcalc__input-field:focus,
+.mcalc__select-field:focus {
+   border: 1px solid var(--color-secondary);
+}
+
+/* Calculate Button */
+
+.mcalc__calculate {
+   font-family: inherit;
+   font-size: 0.9rem;
+   font-weight: 500;
+   text-transform: uppercase;
+   color: var(--color-white);
+   width: unset;
+   padding: 1em 3em;
+   background-color: var(--color-secondary);
+   border: 1px solid var(--color-secondary);
+   border-radius: 0.2em;
+   margin-inline: auto;
+   cursor: pointer;
+   transition: all 0.3s;
+}
+
+.mcalc__calculate:hover {
+   color: var(--color-text);
+   background-color: transparent;
+}
+
+@media (min-width: 30em) {
+   .mcalc__calculate {
+      font-size: 1rem;
+      padding: 1em 5em;
+   }
+}

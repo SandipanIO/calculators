@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+   <!-- Google Fonts -->
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+
+   <!-- Main Stylesheet -->
+   <link rel="stylesheet" href="css/style.css">
+
+   <title>Mortgage Calculator</title>
+</head>
+<body>
+   <main>
+      <div class="mcalc-calculator">
+         <h1 class="heading-1">Mortgage Calculator</h1>         
+
+         <form id="mcalc-form" action="#" method="post">
+            
+            <div class="mcalc__wrapper">
+               <label for="mcalc-home-price" class="mcalc__label">
+                  <span>Home Price</span>
+                  <input class="mcalc__input-field" type="number" name="mcalc-home-price" id="mcalc-home-price" min="1" value="425000" required>
+               </label>
+
+               <label for="mcalc-down-payment" class="mcalc__label">
+                  <span>Down Payment</span>
+                  <input class="mcalc__input-field" type="number" name="mcalc-down-payment" id="mcalc-down-payment" min="1" value="85000" required>
+               </label>
+
+               <label for="mcalc-loan-tenure" class="mcalc__label">
+                  <span>Loan Term</span>
+
+                  <select name="mcalc-loan-tenure" id="mcalc-loan-tenure" class="mcalc__select-field">
+                     <option value="30">30 years</option>
+                     <option value="20">20 years</option>
+                     <option value="15">15 years</option>
+                     <option value="10">10 years</option>
+                  </select>
+               </label>
+
+               <label for="mcalc-interest-rate" class="mcalc__label">
+                  <span>Interest Rate</span>
+                  <input class="mcalc__input-field" type="number" name="mcalc-interest-rate" id="mcalc-interest-rate" min="1" max="25" value="5" required>
+               </label>
+
+            </div>
+            
+            <input type="submit" id="mcalc-calculate" class="mcalc__calculate" value="Calculate">
+         </form>
+
+         <div class="container">
+            <div class="mcalc__chart">
+               <canvas id="myChart" class="mcalc__chart"></canvas>
+            </div>
+            <div id="mcalc-result" class="mcalc__result" data-mcalc-result-visible="false"></div>
+         </div> 
+      </div>
+   </main>
+
+   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+   <script src="js/script.js"></script>
+</body>
+</html>
