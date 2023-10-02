@@ -1,0 +1,79 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+   <!-- Google Fonts -->
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+
+   <!-- Main Stylesheet -->
+   <link rel="stylesheet" href="css/style.css">
+
+   <title>Car Rental Form</title>
+</head>
+<body>
+   <main>
+      <div class="cr-container">
+         <h1 class="heading-1">Car Rental</h1>         
+
+         <form id="cr-form" action="#" method="post">
+            <!-- First Step -->
+            <div id="first-step" class="cr__form-steps">
+               <div class="cr__input-group">
+                  <label for="cr-location">
+                     Location <span class="cr__required">*</span>
+                  </label>
+                  <select name="cr-location" id="cr-location" class="cr__select-field">
+                     <option data-cr-loc-value="500" value="park-street">Park Street</option>
+                     <option data-cr-loc-value="850" value="new-town">New Town</option>
+                     <option data-cr-loc-value="750" value="salt-lake">Salt Lake</option>
+                     <option data-cr-loc-value="450" value="esplanade">Esplande</option>
+                     <option data-cr-loc-value="750" value="kolkata-airport">Kolkata Airport</option>
+                     <option data-cr-loc-value="650" value="howrah">Howrah</option>
+                  </select>
+               </div>
+   
+               <div class="cr__input-group">
+                  <label for="cr-total-kms" class="cr__label">
+                     Total Kilometers <span class="cr__required">*</span>
+                  </label>
+                  <div class="cr__number-block">
+                     <button data-decrement class="cr__spinner decrement">&minus;</button>
+                     <input class="cr__num-field" type="number" name="cr-total-kms" id="cr-total-kms" min="100" max="10000" value="100" readonly>
+                     <button data-increment class="cr__spinner increment">&plus;</button>
+                  </div>
+               </div>
+   
+               <div class="cr__input-group">
+                  <label for="cr-days" class="cr__label">
+                     No. of Day(s) <span class="cr__required">*</span>
+                  </label>
+                  <div class="cr__number-block">
+                     <button data-decrement class="cr__spinner decrement">&minus;</button>
+                     <input class="cr__num-field" type="number" name="cr-days" id="cr-days" min="1" max="200" value="1" readonly>
+                     <button data-increment class="cr__spinner increment">&plus;</button>
+                  </div>
+               </div>
+   
+               <div class="cr__input-group">
+                  <label for="cr-total-price" class="cr__label">
+                     Total Price (in INR)
+                  </label>
+                  <input class="cr__input-field" type="number" name="cr-total-price" id="cr-total-price" readonly>
+               </div>
+
+               <div class="cr__btn-wrapper">
+                  <input type="submit" class="cr__btn" value="Next">
+               </div>
+            </div> <!-- End of first step -->
+         </form>
+      </div>
+   </main>
+
+   <script src="js/script.js"></script>
+</body>
+</html>

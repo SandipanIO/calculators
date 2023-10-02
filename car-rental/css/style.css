@@ -1,0 +1,183 @@
+:root {
+   --color-primary: #dfdada;
+   --color-secondary: #008b8b;
+
+   --color-white: #ffffff;
+   --color-text: #222;
+}
+
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+
+body {
+   font-family: 'Poppins', sans-serif;
+   font-size: 1rem;
+   font-weight: 400;
+   line-height: 1.5;
+   color: var(--color-text);
+}
+
+@media (min-width: 40em) {
+   body {
+      font-size: 1.1rem;
+   }
+}
+
+input,
+select {
+   display: block;
+   width: 100%;
+}
+
+p,
+label {
+   font-weight: 500;
+}
+
+main {
+   min-height: 100vh;
+   display: grid;
+   place-items: center;
+}
+
+.cr-container {
+   width: min(calc(640rem / 16), (100% - 3em));
+   margin-block: 2em;
+}
+
+@media (min-width: 30em) {
+   .cr-container {
+      padding: 2em 3em;
+      border: 1px solid var(--color-secondary);
+      border-radius: 1em;
+   }
+}
+
+.heading-1 {
+   font-weight: 600;
+   text-align: center;
+   margin-bottom: 1em;
+}
+
+/* Input Group */
+.cr__input-group {
+   display: grid;
+   align-items: center;
+}
+
+@media (min-width: 40em) {
+   .cr__input-group {
+      grid-template-columns: 40% 60%;
+   }
+}
+
+/* Input Fields */
+.cr__input-field,
+.cr__select-field {
+   font-size: 1rem;
+   background-color: var(--color-white);
+   height: 45px;
+   margin-block: 0.5em 1em;
+   padding: 0.75em 1em;
+   border: 1px solid var(--color-primary);
+   outline: none;
+}
+
+.cr__input-field:focus,
+.cr__select-field:focus {
+   border: 1px solid var(--color-secondary);
+}
+
+.cr__required {
+   color: red;
+}
+
+/* Number Fields */
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+   -webkit-appearance: none;
+   margin: 0;
+}
+
+.cr__number-block {
+   font-size: 1rem;
+   display: flex;
+   align-items: center;
+   height: 45px;
+   margin-block: 0.5em 1em;
+   padding: 0.75em 1em;
+   background-color: var(--color-white);
+   border: 1px solid var(--color-primary);
+}
+
+.cr__number-block:focus-within {
+   border-color: 1px solid;
+   border-color: #008b8b;
+}
+
+.cr__num-field {
+   font-size: 1rem;
+   text-align: center;
+   border: none;
+   outline: none;
+}
+
+.cr__spinner {
+   background-color: transparent;
+   border: none;
+   font-size: 1.5rem;
+   cursor: pointer;
+}
+
+/* Button Wrapper */
+.cr__btn-wrapper {
+   margin-block: 3em 1em;
+}
+
+/* Button */
+.cr__btn {
+   font-family: inherit;
+   font-size: 0.9rem;
+   font-weight: 500;
+   text-transform: uppercase;
+   color: var(--color-white);
+   width: unset;
+   padding: 1em 3em;
+   background-color: var(--color-secondary);
+   border: 2px solid var(--color-secondary);
+   border-radius: 0.2em;
+   margin-inline: auto;
+   cursor: pointer;
+   transition: all 0.3s;
+}
+
+.cr__btn:hover {
+   color: var(--color-text);
+   background-color: transparent;
+}
+
+@media (min-width: 30em) {
+   .cr__btn {
+      font-size: 1rem;
+      padding: 1em 4em;
+   }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.number-input:focus {
+   border: 1px solid var(--color-secondary);
+}
+
