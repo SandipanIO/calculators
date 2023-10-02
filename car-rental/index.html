@@ -18,11 +18,11 @@
 <body>
    <main>
       <div class="cr-container">
-         <h1 class="heading-1">Car Rental</h1>         
+         <h1 class="heading-1">Car Rental Form</h1>         
 
-         <form id="cr-form" action="#" method="post">
+         <form id="cr-form" class="cr__form" action="#" method="post" data-multi-step>
             <!-- First Step -->
-            <div id="first-step" class="cr__form-steps">
+            <div data-step class="cr__card active">
                <div class="cr__input-group">
                   <label for="cr-location">
                      Location <span class="cr__required">*</span>
@@ -42,9 +42,9 @@
                      Total Kilometers <span class="cr__required">*</span>
                   </label>
                   <div class="cr__number-block">
-                     <button data-decrement class="cr__spinner decrement">&minus;</button>
+                     <button data-decrement class="cr__counter">&minus;</button>
                      <input class="cr__num-field" type="number" name="cr-total-kms" id="cr-total-kms" min="100" max="10000" value="100" readonly>
-                     <button data-increment class="cr__spinner increment">&plus;</button>
+                     <button data-increment class="cr__counter">&plus;</button>
                   </div>
                </div>
    
@@ -53,9 +53,9 @@
                      No. of Day(s) <span class="cr__required">*</span>
                   </label>
                   <div class="cr__number-block">
-                     <button data-decrement class="cr__spinner decrement">&minus;</button>
+                     <button data-decrement class="cr__counter">&minus;</button>
                      <input class="cr__num-field" type="number" name="cr-days" id="cr-days" min="1" max="200" value="1" readonly>
-                     <button data-increment class="cr__spinner increment">&plus;</button>
+                     <button data-increment class="cr__counter">&plus;</button>
                   </div>
                </div>
    
@@ -67,9 +67,45 @@
                </div>
 
                <div class="cr__btn-wrapper">
-                  <input type="submit" class="cr__btn" value="Next">
+                  <button data-next class="cr__btn">Next</button>
                </div>
             </div> <!-- End of first step -->
+
+            <!-- Second Step -->
+            <div data-step class="cr__card hide">
+               <div class="cr__input-group">
+                  <label for="cr-name" class="cr__label">
+                     Name <span class="cr__required">*</span>
+                  </label>
+                  <input class="cr__input-field" type="text" name="cr-name" id="cr-name" required placeholder="Enter your full name">
+               </div>
+
+               <div class="cr__input-group">
+                  <label for="cr-email" class="cr__label">
+                     Email <span class="cr__required">*</span>
+                  </label>
+                  <input class="cr__input-field" type="email" name="cr-email" id="cr-email" required placeholder="Enter your email address">
+               </div>
+
+               <div class="cr__input-group">
+                  <label for="cr-start-date" class="cr__label">
+                     Start Date <span class="cr__required">*</span>
+                  </label>
+                  <input class="cr__input-field" type="datetime-local" name="cr-start-date" id="cr-start-date" required>
+               </div>
+
+               <div class="cr__input-group">
+                  <label for="cr-end-date" class="cr__label">
+                     End Date <span class="cr__required">*</span>
+                  </label>
+                  <input class="cr__input-field" type="datetime-local" name="cr-end-date" id="cr-end-date" required>
+               </div>
+
+               <div class="cr__btn-wrapper cr__btn-space-between">
+                  <button data-previous class="cr__btn">Previous</button>
+                  <button data-submit class="cr__btn">Submit</button>
+               </div>
+            </div>
          </form>
       </div>
    </main>

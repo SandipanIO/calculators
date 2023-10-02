@@ -82,7 +82,7 @@ decrementButtons.forEach(decrementButton => {
       crTotalAmount();
    });
 
-})
+});
 
 /* Increment the input number field and call the crTotalAmount function when the value changes */
 
@@ -102,4 +102,60 @@ incrementButtons.forEach(incrementButton => {
       crTotalAmount();
    });
 
-})
+});
+
+/* 
+
+Multi step form (Will only work if there is two steps with one next and one previous buttons) 
+
+*/ 
+
+const multiStepForm = document.querySelector('[data-multi-step]');
+const formSteps = [...multiStepForm.querySelectorAll("[data-step]")]; // Store the steps in an array
+
+// Get the index of the current step
+let currentStep = formSteps.findIndex(step => {
+   return step.classList.contains('active');
+});
+
+multiStepForm.addEventListener('click', e => {
+   
+   let incrementor;
+
+   if (e.target.matches("[data-next]")) {
+      e.preventDefault();
+
+      // Set incrementor to 1 if the next button is clicked
+      incrementor = 1;
+
+   } else if (e.target.matches("[data-previous]")) {
+      e.preventDefault();
+
+      // Set incrementor to -1 if the next button is clicked
+      incrementor = -1;
+   } else if (e.target.matches("[data-submit]")) {
+      
+      e.preventDefault();
+
+      const inputs = [...formSteps[currentStep].querySelectorAll("input")];
+      inputs.every(input => input.reportValidity());
+
+   } else return;
+
+   if(!e.target.matches("[data-submit]")) {
+
+      // Add the hide class to the current step and remove active class from it
+      formSteps[currentStep].classList.remove('active');
+      formSteps[currentStep].classList.add('hide');
+
+      // Calculate the new currentStep based on the incrementor value
+      currentStep = currentStep + incrementor;
+
+      // Remove the hide class from the new currentStep and add active class to it
+      formSteps[currentStep].classList.add('active');
+      formSteps[currentStep].classList.remove('hide');
+
+   }
+
+});
+

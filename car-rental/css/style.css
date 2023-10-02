@@ -48,18 +48,20 @@ main {
    margin-block: 2em;
 }
 
-@media (min-width: 30em) {
-   .cr-container {
-      padding: 2em 3em;
-      border: 1px solid var(--color-secondary);
-      border-radius: 1em;
-   }
-}
-
 .heading-1 {
    font-weight: 600;
    text-align: center;
    margin-bottom: 1em;
+}
+
+.cr__card {
+   padding: 3em 2.5em;
+   border-radius: 1em;
+   box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+}
+
+.hide {
+   display: none;
 }
 
 /* Input Group */
@@ -125,16 +127,26 @@ input[type=number]::-webkit-outer-spin-button {
    outline: none;
 }
 
-.cr__spinner {
+.cr__counter {
    background-color: transparent;
    border: none;
    font-size: 1.5rem;
    cursor: pointer;
 }
 
+input[type="datetime-local"] {
+   font-size: inherit;
+}
+
 /* Button Wrapper */
 .cr__btn-wrapper {
-   margin-block: 3em 1em;
+   display: flex;
+   justify-content: flex-end;
+   margin-block: 2em 0;
+}
+
+.cr__btn-space-between {
+   justify-content: space-between;
 }
 
 /* Button */
@@ -145,11 +157,10 @@ input[type=number]::-webkit-outer-spin-button {
    text-transform: uppercase;
    color: var(--color-white);
    width: unset;
-   padding: 1em 3em;
+   padding: 0.9em 3.5em;
    background-color: var(--color-secondary);
    border: 2px solid var(--color-secondary);
    border-radius: 0.2em;
-   margin-inline: auto;
    cursor: pointer;
    transition: all 0.3s;
 }
@@ -158,26 +169,3 @@ input[type=number]::-webkit-outer-spin-button {
    color: var(--color-text);
    background-color: transparent;
 }
-
-@media (min-width: 30em) {
-   .cr__btn {
-      font-size: 1rem;
-      padding: 1em 4em;
-   }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-.number-input:focus {
-   border: 1px solid var(--color-secondary);
-}
-
